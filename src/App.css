@@ -1,0 +1,252 @@
+body {
+  background-color: #00a4e0;
+  background-image: linear-gradient(to bottom, #1275b7, transparent);
+  background-repeat: no-repeat;
+}
+
+.App {
+  text-align: center;
+}
+
+/* .App::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -51%);
+
+  background-image: url('assets/bg.png');
+  opacity: 0.6;
+  background-size: 376px 495px;
+  background-repeat: no-repeat;
+  background-position: center center;
+} */
+
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app-h {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.app-p {
+  color: white;
+  font-size: 21px;
+}
+
+
+.app-frame {
+  width: 100%;
+  height: 80vh;
+  margin: 0 auto;
+  /* outline: 2px steelblue solid; */
+  overflow: hidden;
+  position: relative;
+
+  background-image: url('assets/bg.png');
+  /* opacity: 0.6; */
+  background-size: 600px 544px;
+  background-repeat: no-repeat;
+  background-position: center 120px;
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.app-frame > div {
+  width: 100%;
+  height: 80vh;
+}
+
+.app-img {
+  position: relative;
+  width: auto;
+  touch-action: none;
+  /* width: 100%; */
+  /* object-fit: contain; */
+}
+
+.platform {
+  position: absolute;
+  width: 112px;
+  height: 36px;
+  bottom: 10px;
+  background-color: #e8e8e8;
+  background-image: url('assets/platform.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.platform::after {
+  content: '';
+  position: absolute;
+  /* z-index: -1; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -51%);
+  width: 133px;
+  height: 48px;
+  /* background-color: red; */
+  background-image: url('assets/platform_back.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.ball {
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #f2a3c7;
+  background-image: url('assets/ball.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.bricks {
+  position: absolute;
+  /* top: 5px; */
+  left: 0;
+  width: 100%;
+  height: 50px;
+  /* background-color: yellow; */
+}
+
+.brick {
+  position: absolute;
+  width: 70px;
+  height: 20px;
+  background-color: #87bce6;
+  background-image: url('assets/brick.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 0.3rem;
+}
+
+.brick--special {
+  background-color: #ff539e;
+  background-image: url('assets/brick-special.png');
+}
+/* 
+button {
+  position: absolute;
+} */
+
+.btn1 {
+  top: 0;
+}
+
+.btn2 {
+  top: 20px;
+}
+
+.border-bottom {
+  width: 100%;
+  height: 3px;
+  background-color: #2f2771;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  background-color: rgba(47, 39, 113, 0.6);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.visible {
+  display: flex;
+}
+
+.overlay p {
+  font-size: 18px;
+  color: white;
+}
+
+.btn-bricks {
+  width: 60%;
+  padding: 20px 0;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  background-color: white;
+  border-radius: 5px;
+  transition: all 0.2s;
+
+  color: #2f2771;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.btn-bricks:active {
+  transform: scale(0.95);
+}
+
+.final-btn {
+  /* display: block;
+  position: initial; */
+  width: 60%;
+  padding: 10px 20px;
+  background-color: #2f2771;
+  color: white;
+  font-size: 21px;
+  font-weight: bold;
+  border: 0;
+  outline: none;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.final-btn:active {
+  transform: scale(0.95);
+}
+
+.start {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.final {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.final-img {
+  width: 70%;
+  margin-top: 40px;
+}
+
+.final-img--2 {
+  width: 90%;
+  margin-top: 0px;
+}
