@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/orbit-breakout-game/static/css/main.62e7ad04.css",
+    "main.js": "/orbit-breakout-game/static/js/main.dba1448c.js",
+    "static/media/final2.png": "/orbit-breakout-game/static/media/final2.7214ceef9851febfe1c0.png",
+    "static/media/final.png": "/orbit-breakout-game/static/media/final.85bacb578ae7ab196a15.png",
+    "static/media/bg.png": "/orbit-breakout-game/static/media/bg.d7db0c4c71e61d1780bf.png",
+    "static/media/ball.png": "/orbit-breakout-game/static/media/ball.0346bacaddce4cf5ae6d.png",
+    "static/media/platform_back.png": "/orbit-breakout-game/static/media/platform_back.45f6829cdd8b1549aa91.png",
+    "index.html": "/orbit-breakout-game/index.html",
+    "main.62e7ad04.css.map": "/orbit-breakout-game/static/css/main.62e7ad04.css.map",
+    "main.dba1448c.js.map": "/orbit-breakout-game/static/js/main.dba1448c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.62e7ad04.css",
+    "static/js/main.dba1448c.js"
+  ]
+}
