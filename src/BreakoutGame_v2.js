@@ -6,7 +6,7 @@ const brickColumnCount = 5;
 const brickOffsetTop = 10;
 const brickOffsetLeft = 10;
 
-const platformTop = 46;
+const platformTop = 64;
 
 const generateBricks = (n, specials) => {
   const possiblePositions = []
@@ -28,6 +28,7 @@ const generateBricks = (n, specials) => {
   return bricks;
 }
 
+const iniDxs = [1.8, 2, 2.2, 2.4, 2.6, 2.8]
 
 function BreakoutGame({ n=20, specials=4, onFinish }) {
   const [platformPosition, setPlatformPosition] = useState(100)
@@ -38,14 +39,16 @@ function BreakoutGame({ n=20, specials=4, onFinish }) {
 
   const [gameState, setGameState] = useState({
     bricks: generateBricks(n, specials),
-    ballPosition: {x: 140, y: platformTop + 10, dx: 2, dy: 3},
+    dXs: [...iniDxs],
+    ballPosition: {x: 140, y: platformTop + 10, dx: iniDxs[Math.floor(Math.random()*iniDxs.length)], dy: 3},
     elapsedTime: 0,
     needAcceleration: false,
-    accelerationLimits: [0.8, 0.6, 0.4, 0.2],
+    accelerationLimits: [0.6, 0.4, 0.2],
   })
 
   
-
+  // console.log(gameState)
+  // console.log(iniDxs[Math.floor(Math.random()*iniDxs.length)])
 
   // Use useRef for mutable variables that we want to persist
   // without triggering a re-render on their change
@@ -56,7 +59,7 @@ function BreakoutGame({ n=20, specials=4, onFinish }) {
   const brickHeight = 20;
   const brickPadding = 5;
   const brickWidth = (window.innerWidth - brickPadding * 4 - brickOffsetLeft*2) /5;
-  const accelerationRate = 1.25
+  const accelerationRate = 1.2
 
 
   const animate = time => {
@@ -65,16 +68,25 @@ function BreakoutGame({ n=20, specials=4, onFinish }) {
 
 
       setGameState(prevState => {
+        // console.log(prevState)
         const newElapsedTime = prevState.elapsedTime + deltaTime;
+        let newDxs = prevState.dXs
+        let newDx = prevState.ballPosition.dx
+        let newDy = prevState.ballPosition.dy
         let newBricks = [...prevState.bricks]
         let brokenBricksCount = newBricks.filter(el => el.status === 0).length
         const totalBricksCount = newBricks.length
         let newNeedAcceleration = prevState.needAcceleration
         const newAccelerationLimits = [...prevState.accelerationLimits]
-        
-        let newDy = newNeedAcceleration ? prevState.ballPosition.dy * accelerationRate : prevState.ballPosition.dy 
-        let newDx = newNeedAcceleration ? prevState.ballPosition.dx * accelerationRate : prevState.ballPosition.dx
-        newNeedAcceleration = false
+
+        if (newNeedAcceleration) {
+          newDxs = newDxs.map(dx => dx * accelerationRate)
+          newDy = prevState.ballPosition.dy * accelerationRate 
+          newDx = prevState.ballPosition.dx * accelerationRate
+          newNeedAcceleration = false
+        } 
+        // let newDy = newNeedAcceleration ? prevState.ballPosition.dy * accelerationRate : prevState.ballPosition.dy 
+        // let newDx = newNeedAcceleration ? prevState.ballPosition.dx * accelerationRate : prevState.ballPosition.dx
 
         // detecting game over
         if (prevState.ballPosition.y < platformTop - 5) {
@@ -145,7 +157,8 @@ function BreakoutGame({ n=20, specials=4, onFinish }) {
           if ( (brokenBricksCount / totalBricksCount) >= newAccelerationLimits[newAccelerationLimits.length - 1]) {
             newNeedAcceleration = true;
             const acc = newAccelerationLimits.pop()
-            console.log((brokenBricksCount / totalBricksCount))
+            // newDxs = newDxs.map(dx => dx * acc)
+            // console.log((brokenBricksCount / totalBricksCount))
             console.log(acc)
             console.log('acceleration!')
           }
@@ -161,8 +174,12 @@ function BreakoutGame({ n=20, specials=4, onFinish }) {
                 )
             ) 
         {
+          // console.log('before change', newDy, newDx)
+          newDx = Math.sign(newDx) * newDxs[Math.floor(Math.random()*newDxs.length)]
           newDy = -newDy
-          newDx = newDx * (1 + (Math.floor(Math.random() * 10)*0.01))
+          // console.log('after change', newDy, newDx)
+          // const randFactor = (Math.random() > 0.5) ? 1 + (Math.floor(Math.random() * 10)*0.02) : 1 + (Math.floor(Math.random() * 10)*0.02)
+          // newDx = newDx * randFactor
         }
         if ((prevState.ballPosition.x + newDx < 0) 
             || (prevState.ballPosition.x + newDx  > containerRef.current.offsetWidth - ballSize))  
@@ -174,6 +191,7 @@ function BreakoutGame({ n=20, specials=4, onFinish }) {
         // console.log(newPaused)
         const newState = {
           bricks: newBricks,
+          dXs: newDxs,
           ballPosition: {y: prevState.ballPosition.y + newDy, x: prevState.ballPosition.x + newDx, dy: newDy, dx: newDx},
           elapsedTime: newElapsedTime,
           needAcceleration: newNeedAcceleration,

@@ -18,7 +18,6 @@ function App() {
 
   return (
     <div className="App">
-      <p className='app-h'>Orbit® Breakout Game</p>
       {!bricksCount && 
       <StartWindow selectNum={setBricksCount}/>
       }

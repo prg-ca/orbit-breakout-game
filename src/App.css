@@ -86,9 +86,9 @@ body {
 
 .platform {
   position: absolute;
-  width: 112px;
-  height: 36px;
-  bottom: 10px;
+  width: 158px;
+  height: 49px;
+  bottom: 15px;
   background-color: #e8e8e8;
   background-image: url('assets/platform.png');
   background-size: cover;
@@ -103,8 +103,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -51%);
-  width: 133px;
-  height: 48px;
+  width: 186px;
+  height: 67px;
   /* background-color: red; */
   background-image: url('assets/platform_back.png');
   background-size: cover;
@@ -193,7 +193,7 @@ button {
 
 .btn-bricks {
   width: 60%;
-  padding: 20px 0;
+  padding: 25px 0;
   margin: 0 auto;
   margin-bottom: 25px;
   background-color: white;
@@ -203,6 +203,12 @@ button {
   color: #2f2771;
   font-size: 28px;
   font-weight: bold;
+  line-height: 32px;
+}
+
+.smaller {
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .btn-bricks:active {
