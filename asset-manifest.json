@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/orbit-breakout-game/static/css/main.218a3208.css",
-    "main.js": "/orbit-breakout-game/static/js/main.8c8d3e32.js",
+    "main.css": "/orbit-breakout-game/static/css/main.86fef4e3.css",
+    "main.js": "/orbit-breakout-game/static/js/main.7b70b459.js",
     "static/media/final2.png": "/orbit-breakout-game/static/media/final2.7214ceef9851febfe1c0.png",
     "static/media/final.png": "/orbit-breakout-game/static/media/final.85bacb578ae7ab196a15.png",
     "static/media/bubble1.png": "/orbit-breakout-game/static/media/bubble1.d309b83e66f8261bd076.png",
@@ -9,11 +9,11 @@
     "static/media/ball.png": "/orbit-breakout-game/static/media/ball.0346bacaddce4cf5ae6d.png",
     "static/media/platform_back.png": "/orbit-breakout-game/static/media/platform_back.45f6829cdd8b1549aa91.png",
     "index.html": "/orbit-breakout-game/index.html",
-    "main.218a3208.css.map": "/orbit-breakout-game/static/css/main.218a3208.css.map",
-    "main.8c8d3e32.js.map": "/orbit-breakout-game/static/js/main.8c8d3e32.js.map"
+    "main.86fef4e3.css.map": "/orbit-breakout-game/static/css/main.86fef4e3.css.map",
+    "main.7b70b459.js.map": "/orbit-breakout-game/static/js/main.7b70b459.js.map"
   },
   "entrypoints": [
-    "static/css/main.218a3208.css",
-    "static/js/main.8c8d3e32.js"
+    "static/css/main.86fef4e3.css",
+    "static/js/main.7b70b459.js"
   ]
 }
